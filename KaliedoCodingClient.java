@@ -64,7 +64,12 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void registration(Scanner scanner) {
-
+	 System.out.print("\nPlease Enter the Compound ID you want to Register: ");
+	 String ID=scanner.next();
+	 Compound newCompound=new Compound(ID); //creates new compound object
+	 compoundList.add(newCompound); //adds compound object to arraylist of compound objects
+	 System.out.println("Compound "+ID+" has been registered."+"\n");
+	 prompt(); 
 	}
 	
 	/**
@@ -72,7 +77,13 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void assignment(Scanner scanner) {
-
+          System.out.print("\nPlease Enter the Compound ID you want to Assign: ");
+	  String ID=scanner.next();
+	  System.out.print("Please Enter the Plate you want to Assign "+ID+" to: ");
+	  String plateID=scanner.next();
+	  assignmentHelper(ID, plateID); //calls a helper method 
+	  System.out.println("Compound "+ID+" has been assigned to Plate "+plateID+".\n");
+	  prompt();
 	}
 	
 	/**
@@ -91,7 +102,14 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void transfer(Scanner scanner) {
-
+	 System.out.print("\nPlease Enter the Well you want to Transfer contents from: ");
+	 String ID=scanner.next();
+	 System.out.print("Please Enter the Well/Wells you want to Transfer contents to: ");
+	 scanner.nextLine();
+	 String wells=scanner.nextLine();
+	 transferHelper(ID, wells); //calls a helper method
+	 System.out.println("Well "+ID+" contents has been Transferred to "+wells+".\n");
+	 prompt();
 	}
 	
 	/**
@@ -118,7 +136,16 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void request(Scanner scanner) {
-
+	  System.out.print("\nPlease Enter the Well you want to Request a Compound from: ");
+	  String ID=scanner.next();
+	  Compound compound=requestHelper(ID); //calls a helper method
+	  if(compound!=null) {
+	     System.out.println("Well "+ ID+" belongs to Compound "+compound.toString()+".");
+	   }
+	   else {
+	     System.out.println("That Well does not belong to a Compound.");
+	   }
+	   prompt();
 	}
 	
 	/**
@@ -134,6 +161,6 @@ public class KaleidoClientCode {
 	 * This is a method that prints out the end prompt. 
 	 */
 	public static void finish() {
-		
+	   System.out.println("\nThank you! Have a great day!");
 	}
 }
