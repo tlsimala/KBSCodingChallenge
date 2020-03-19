@@ -22,7 +22,8 @@ Instructions:
   Therefore, to give some better progression, I decided to type in some thoughts I was thinking in certain classes to show you 
   some insight. If you want, I can also take some screenshots of my notes and email them to you as well as it might depict
   more of my intial thoughts about the problem. 
- 
+  
+  However, I find that through spending extra time mapping out the problem, I run into less bugs later. 
  
  ASSUMPTIONS:
  1. I am assuming that(P-12345.A2 as an example) P-12345 is the plate and A2 is the well, so when it is time to transfer           content from well to another well (P-3.A4 as an example) P-3 is another plate and A4 is a well. However, P-3 is a plate,       it isn't the "main plate" and is more of a sub plate. 
