@@ -21,6 +21,6 @@ Instructions:
  
    For a visual-ish hierarchial example, 
    
-   S <---- the compound
-   P-12345 <--- parent plate or main plate
-   P-3 <---- still a plate, but a sub plate within this compound (not a completely new plate)
+      S <---- the compound
+      P-12345 <--- parent plate or main plate
+      P-3 <---- still a plate, but a sub plate within this compound (not a completely new plate)
