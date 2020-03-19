@@ -18,23 +18,26 @@ public class Plate {
 		this.contents="Awesome and Specific Scientific Contents";
 	}
   
-  
-
-
 	/**
 	 * This method sets the Plate ID 
 	 * for instance, *****.WellID and the Plate ID would be the string and astericks
 	 * @param location
 	 */
 	public void setPlateID(int location) {
-		
+	  this.ID=fullID.substring(0, location);
 	}
 
 	/**
 	 * This method sets the WellID 
 	 */
 	public void setWellID() {
-		
+	  int periodPoint=0;
+	  for(int i=0; i<fullID.length(); i++) {
+		if(fullID.charAt(i)=='.') {
+			periodPoint=i;
+			}
+		}
+	   wellID=fullID.substring(periodPoint, fullID.length());	
 	}
 
 	/**
@@ -42,7 +45,7 @@ public class Plate {
 	 * @return plate ID
 	 */
 	public String getID() {
-	
+	  return ID;
 	}
 
 	/**
@@ -50,7 +53,7 @@ public class Plate {
 	 * @return wellID
 	 */
 	public String getWellID() {
-		
+	  return wellID;	
 	}
 
 	/**
@@ -58,7 +61,7 @@ public class Plate {
 	 * @return
 	 */
 	public String getContents() {
-		
+	  return contents;	
 	}
 
 	/**
@@ -66,6 +69,6 @@ public class Plate {
 	 * @return
 	 */
 	public String getFullID() {
-		
+	  return fullID;
 	}
 }
