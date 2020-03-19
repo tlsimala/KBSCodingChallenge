@@ -20,7 +20,7 @@ public class Well {
 	public Well(String idString, Plate plate, Compound compound) {
 		this.ID=idString;
 		this.compoundID=compound;
-		this.plateID=plate.getID();
+		this.plateID=plate.getFullID();
 	}
 	
 	/**
