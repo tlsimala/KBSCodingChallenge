@@ -135,6 +135,7 @@ public class KaleidoClientCode {
 		String[] platesArray=updatedPlates.split(","); //splits the wells string to break down the number of wells
 		for(int i=0; i<platesArray.length; i++) {
 			String newPlateString=platesArray[i]; 
+			//newPlateString=newPlateString.substring(0);//handle the space
 			newPlateString=newPlateString.trim();
 			Plate newPlate=new Plate(newPlateString);  //create a new plate
 			newPlate.setWellID(); //set the well ID of that plate
