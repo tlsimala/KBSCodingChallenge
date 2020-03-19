@@ -19,9 +19,8 @@ Instructions:
  ASSUMPTIONS:
  1. I am assuming that(P-12345.A2 as an example) P-12345 is the plate and A2 is the well, so when it is time to transfer           content from well to another well (P-3.A4 as an example) P-3 is another plate and A4 is a well. However, P-3 is a plate,       it isn't the "main plate" and is more of a sub plate. 
  
-   For a visual example, 
-                  S <---- the compound
-               P-12345 <--- parent plate or main plate
-                    \
-                     \
-                       P-3 <---- still a plate, but a sub plate within this compound (not a completely new plate)
+   For a visual-ish hierarchial example, 
+   
+   S <---- the compound
+   P-12345 <--- parent plate or main plate
+   P-3 <---- still a plate, but a sub plate within this compound (not a completely new plate)
