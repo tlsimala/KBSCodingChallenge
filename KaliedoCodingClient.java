@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,18 +59,17 @@ public class KaleidoClientCode {
 		}
 	}
 	
-		
 	/**
 	 * This method registers a CompoundID
 	 * @param scanner
 	 */
 	public static void registration(Scanner scanner) {
-	 System.out.print("\nPlease Enter the Compound ID you want to Register: ");
-	 String ID=scanner.next();
-	 Compound newCompound=new Compound(ID); //creates new compound object
-	 compoundList.add(newCompound); //adds compound object to arraylist of compound objects
-	 System.out.println("Compound "+ID+" has been registered."+"\n");
-	 prompt(); 
+		System.out.print("\nPlease Enter the Compound ID you want to Register: ");
+		String ID=scanner.next();
+		Compound newCompound=new Compound(ID); //creates new compound object
+		compoundList.add(newCompound); //adds compound object to arraylist of compound objects
+		System.out.println("Compound "+ID+" has been registered."+"\n");
+		prompt(); 
 	}
 	
 	/**
@@ -77,13 +77,13 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void assignment(Scanner scanner) {
-          System.out.print("\nPlease Enter the Compound ID you want to Assign: ");
-	  String ID=scanner.next();
-	  System.out.print("Please Enter the Plate you want to Assign "+ID+" to: ");
-	  String plateID=scanner.next();
-	  assignmentHelper(ID, plateID); //calls a helper method 
-	  System.out.println("Compound "+ID+" has been assigned to Plate "+plateID+".\n");
-	  prompt();
+		System.out.print("\nPlease Enter the Compound ID you want to Assign: ");
+		String ID=scanner.next();
+		System.out.print("Please Enter the Plate you want to Assign "+ID+" to: ");
+		String plateID=scanner.next();
+		assignmentHelper(ID, plateID); //calls a helper method 
+		System.out.println("Compound "+ID+" has been assigned to Plate "+plateID+".\n");
+		prompt();
 	}
 	
 	/**
@@ -93,7 +93,17 @@ public class KaleidoClientCode {
 	 * @param plateID
 	 */
 	public static void assignmentHelper(String ID, String plateID) {
-
+		for (int i = 0; i < compoundList.size(); i++) {
+			Compound compoundClone=compoundList.get(i); //searching through arraylist of compound objects
+			String compoundID=compoundClone.toString(); //getting string of the compound's ID
+			if(compoundID.equals(ID)) { 
+				Plate plate=new Plate(plateID); //new plate object
+				plate.setWellID(); //set the well ID field in plate object
+				Well well=new Well(plate.getWellID(), plate, compoundClone); //new well object
+				compoundClone.AddPlate(plate); //add the plate object and well object into an hashmap of arraylists in the compound object
+				compoundClone.AddWell(plate, well);
+			}
+		}
 	}
 	
 
@@ -102,14 +112,14 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void transfer(Scanner scanner) {
-	 System.out.print("\nPlease Enter the Well you want to Transfer contents from: ");
-	 String ID=scanner.next();
-	 System.out.print("Please Enter the Well/Wells you want to Transfer contents to: ");
-	 scanner.nextLine();
-	 String wells=scanner.nextLine();
-	 transferHelper(ID, wells); //calls a helper method
-	 System.out.println("Well "+ID+" contents has been Transferred to "+wells+".\n");
-	 prompt();
+		System.out.print("\nPlease Enter the Well you want to Transfer contents from: ");
+		String ID=scanner.next();
+		System.out.print("Please Enter the Well/Wells you want to Transfer contents to: ");
+		scanner.nextLine();
+		String wells=scanner.nextLine();
+		transferHelper(ID, wells); //calls a helper method
+		System.out.println("Well "+ID+" contents has been Transferred to "+wells+".\n");
+		prompt();
 	}
 	
 	/**
@@ -119,7 +129,19 @@ public class KaleidoClientCode {
 	 * @param wells
 	 */
 	public static void transferHelper(String ID, String wells) {
-
+		Compound compound=getCompound(ID); //gets compound 
+		Plate plate=compound.findPlate(ID); //gets plate
+		String updatedPlates=wells.trim(); 
+		String[] platesArray=updatedPlates.split(","); //splits the wells string to break down the number of wells
+		for(int i=0; i<platesArray.length; i++) {
+			String newPlateString=platesArray[i].trim(); 
+			Plate newPlate=new Plate(newPlateString);  //create a new plate
+			newPlate.setWellID(); //set the well ID of that plate
+			Well newWell=new Well(newPlate.getWellID(), newPlate, compound); //new well object
+			newWell.setContents(plate.getContents()); //transferring of the content
+			newWell.setContentFromPlate(plate);
+			compound.AddWell(plate, newWell); //adding the new wells into the compound object
+		}
 	}
 	
 	/**
@@ -128,7 +150,14 @@ public class KaleidoClientCode {
 	 * @return
 	 */
 	public static Compound getCompound(String plateID) {
-
+		Compound compound=null;
+		for (int i = 0; i < compoundList.size(); i++) {
+			compound=compoundList.get(i);
+			if(compound.findPlate(plateID)!=null) {
+				return compound;
+			}
+		}
+		return null;
 	}
 	
 	/**
@@ -136,16 +165,16 @@ public class KaleidoClientCode {
 	 * @param scanner
 	 */
 	public static void request(Scanner scanner) {
-	  System.out.print("\nPlease Enter the Well you want to Request a Compound from: ");
-	  String ID=scanner.next();
-	  Compound compound=requestHelper(ID); //calls a helper method
-	  if(compound!=null) {
-	     System.out.println("Well "+ ID+" belongs to Compound "+compound.toString()+".");
-	   }
-	   else {
-	     System.out.println("That Well does not belong to a Compound.");
-	   }
-	   prompt();
+		System.out.print("\nPlease Enter the Well you want to Request a Compound from: ");
+		String ID=scanner.next();
+		Compound compound=requestHelper(ID); //calls a helper method
+		if(compound!=null) {
+			System.out.println("Well "+ ID+" belongs to Compound "+compound.toString()+".");
+		}
+		else {
+			System.out.println("That Well does not belong to a Compound.");
+		}
+		prompt();
 	}
 	
 	/**
@@ -154,13 +183,21 @@ public class KaleidoClientCode {
 	 * @return compound
 	 */
 	public static Compound requestHelper(String ID) {
-
+		Compound compound=null;
+		for (int i = 0; i < compoundList.size(); i++) {
+			compound=compoundList.get(i);
+			boolean answer=compound.findWell(ID);
+			if(answer==true) {
+				return compound;
+			}
+		}
+		return null;
 	}
 	
 	/**
 	 * This is a method that prints out the end prompt. 
 	 */
 	public static void finish() {
-	   System.out.println("\nThank you! Have a great day!");
+		System.out.println("\nThank you! Have a great day!");
 	}
 }
