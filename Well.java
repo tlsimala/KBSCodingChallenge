@@ -28,7 +28,7 @@ public class Well {
 	 * @return
 	 */
 	public String getContents() {
-	    return contents;
+		return contents;
 	}
 	
 	/**
@@ -36,7 +36,7 @@ public class Well {
 	 * @param contentString
 	 */
 	public void setContents(String contentString) {
-	    contents=contentString;
+		contents=contentString;
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class Well {
 	 * @return plate
 	 */
 	public Plate getContentFromPlate() {
-	    return contentFromPlate;	
+		return contentFromPlate;
 	}
 	
 	/**
@@ -52,7 +52,7 @@ public class Well {
 	 * @param plate
 	 */
 	public void setContentFromPlate(Plate plate) {
-	    this.contentFromPlate=plate;
+		this.contentFromPlate=plate;
 	}
 	
 	/**
@@ -60,7 +60,7 @@ public class Well {
 	 * @return wellID
 	 */
 	public String getID() {
-	    return ID;	
+		return ID;
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class Well {
 	 * @return plateID
 	 */
 	public String getPlateID() {
-	    return plateID.toString();
+		return plateID.toString();
 	}
 	
 	/**
@@ -76,6 +76,6 @@ public class Well {
 	 * @return ID of compound
 	 */
 	public String getCompound() {
-	    return compoundID.toString();
+		return compoundID.toString();
 	}
 }
