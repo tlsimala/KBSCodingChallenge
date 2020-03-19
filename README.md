@@ -24,6 +24,8 @@ Instructions:
   more of my intial thoughts about the problem. 
   
   However, I find that through spending extra time mapping out the problem, I run into less bugs later. 
+  
+  Also, I like to build skeletons of my classes then go back into them and fill them out from the bottom up. 
  
  ASSUMPTIONS:
  1. I am assuming that(P-12345.A2 as an example) P-12345 is the plate and A2 is the well, so when it is time to transfer           content from well to another well (P-3.A4 as an example) P-3 is another plate and A4 is a well. However, P-3 is a plate,       it isn't the "main plate" and is more of a sub plate. 
