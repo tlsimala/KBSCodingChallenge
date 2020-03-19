@@ -1,5 +1,6 @@
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * @author tlsimala
@@ -10,24 +11,6 @@ import java.util.HashMap;
 public class Compound {
 	private String ID;
 	private HashMap<Plate, ArrayList<Well>> storage;
-  
-  //First thoughts: TREE VS HASHMAP
-  //do I go the hashmap route or do I make it like a tree? 
-  //a tree would give better traversal time if I could sort by the numbers within the plate
-  //tree nodes would allow me to keep the connection between the compound, plates, and wells 
-  
-  //hashmaps would allow for the unqiue plate and I could just throw all of the wells into the arraylist to keep track of them
-  //this is not a good reason, but I like hashmaps a little bit more than trees and it seems like it would be more iterative
-  //which may turn out to be more gross to debug in the end 
-  
-  //WELL OBJECT, PLATE OBJECT, COMPOUND OBJECT?
-  //I think I want to make a class for well and plate objects because I believe if I was a scientist there is more than
-  //meets the eye to wells and plates and that even if it isn't fit for this challenge, there is more ifnormation that
-  //would be nice to store in them or reside in them already
-  //also who doesn't love object oriented design hahaha 
-  //also its always better to generalize the objects so you don't have to code more 
-  
-
 	/**
 	 * The constructor
 	 * @param idString
@@ -36,7 +19,7 @@ public class Compound {
 		this.ID=idString;
 		this.storage=new HashMap<Plate, ArrayList<Well>>();
 	}
-	
+
 	/**
 	 * This method adds a plate into the hashmap
 	 * @param plate
@@ -64,12 +47,13 @@ public class Compound {
 	public boolean findWell(String wellID) {
 	  Set<Plate> plateSet=storage.keySet(); //a set of plates
 	   for(Plate plate: plateSet) {
-	    //iterator nvm on iterator 
-		   ArrayList<Well> wellList=storage.get(plate);
-		   //implement for each loop afterwards
-		//arraylist
-		//iterate through arraylist
-		//if it equals the id then true
+		ArrayList<Well> wellList=storage.get(plate);
+		for(Well well: wellList) { //going through the well list for the plates
+		   if(well.getPlateID().equals(wellID)) {
+			return true;
+	           }
+	         }
+	      }
 		return false;
 	}
 	
@@ -79,13 +63,13 @@ public class Compound {
 	 * @return Plate
 	 */
 	public Plate findPlate(String plateID) {
-		Set<Plate> plateSet=storage.keySet();
-		Plate clonePlate=null;
-		//implement for each loop afterwards
-		//iterator
-		//new plate object
-		//go through set
-		//get the equal plate id 
+	  Set<Plate> plateSet=storage.keySet();
+	  Plate clonePlate=null;
+	   for(Plate plate: plateSet) {
+	      if(plate.getFullID().equals(plateID)) {
+		clonePlate=plate;
+		}
+	     }
 		return clonePlate;   
 	}
 	
