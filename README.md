@@ -26,7 +26,7 @@ Instructions:
   Lastly, I am switching between Github and Eclipse so when I am completely finished, if you review my most recent commits and it looks like I copied and pasted the entire code into my classes. I just am making sure my code has absolutely no errors in it due to faulty copy and paste that I could've mistakenly done when switching code to and from Github and Eclipse and you should be able to see some sort of my thought process in earlier commits.
   
       THOUGHTS THROUGHOUT THE WAY:
-      1. I wish I would've looked closer at the Atlas photo because now I think I            would've used a matrix array to store the wells 
+      1. I wish I would've looked closer at the Atlas photo because now I think I would've used a matrix array to store the wells 
       2. 
  
  ASSUMPTIONS:
