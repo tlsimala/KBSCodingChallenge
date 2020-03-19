@@ -63,7 +63,10 @@ public class Compound {
 	 */
 	public boolean findWell(String wellID) {
 	  Set<Plate> plateSet=storage.keySet(); //a set of plates
-	   //iterator
+	   for(Plate plate: plateSet) {
+	    //iterator nvm on iterator 
+		   ArrayList<Well> wellList=storage.get(plate);
+		   //implement for each loop afterwards
 		//arraylist
 		//iterate through arraylist
 		//if it equals the id then true
@@ -76,11 +79,14 @@ public class Compound {
 	 * @return Plate
 	 */
 	public Plate findPlate(String plateID) {
+		Set<Plate> plateSet=storage.keySet();
+		Plate clonePlate=null;
+		//implement for each loop afterwards
 		//iterator
 		//new plate object
 		//go through set
 		//get the equal plate id 
-		return null;   
+		return clonePlate;   
 	}
 	
 	/**
