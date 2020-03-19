@@ -42,7 +42,8 @@ public class Compound {
 	 * @param plate
 	 */
 	public void AddPlate(Plate plate) {
-		
+	  ArrayList<Well> wellList=new ArrayList<Well>();
+	  storage.put(plate, wellList);
 	}
 	
 	/**
@@ -51,7 +52,8 @@ public class Compound {
 	 * @param well
 	 */
 	public void AddWell(Plate plate, Well well) {
-		
+	   ArrayList<Well> cloneWellList=storage.get(plate);
+	   cloneWellList.add(well);
 	}
 	
 	/**
@@ -60,7 +62,11 @@ public class Compound {
 	 * @return true or false
 	 */
 	public boolean findWell(String wellID) {
-		
+	  Set<Plate> plateSet=storage.keySet(); //a set of plates
+	   //iterator
+		//arraylist
+		//iterate through arraylist
+		//if it equals the id then true
 		return false;
 	}
 	
@@ -70,7 +76,10 @@ public class Compound {
 	 * @return Plate
 	 */
 	public Plate findPlate(String plateID) {
-		
+		//iterator
+		//new plate object
+		//go through set
+		//get the equal plate id 
 		return null;   
 	}
 	
@@ -79,6 +88,6 @@ public class Compound {
 	 * @return the compound ID
 	 */
 	public String toString() {
-		return ID;
+	   return ID;
 	}
 }
