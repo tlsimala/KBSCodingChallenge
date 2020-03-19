@@ -15,15 +15,11 @@ Instructions:
  I hope that you enjoy my solution! (: 
  
  
-  Additionally, to give some insight into my progression through this problem, when I approach a problem I always start out on some notebook paper or a white board (if there is one around). Normally, I like to go pretty in-depth and it can be time consuming (but worthwhile) for me because not only do I take notes and summarize the problem, but I do draw skeletons of my code and even will write code as well to give me an even clearer idea of where I am going before I start typing. 
+  Additionally, to give some insight into my progression through this problem, when I approach a problem I always start out on some notebook paper or a white board (if there is one around). Normally, I like to go pretty in-depth and it can be time consuming (but worthwhile as I find that through spending extra time mapping out the problem, I run into less bugs later) for me because not only do I take notes and summarize the problem, but I do draw skeletons of my code and even will write code as well to give me an even clearer idea of where I am going before I start typing. 
   
- Therefore, to give some better progression, I decided to type in some thoughts I was thinking in certain classes to show you some insight. If you want, I can also take some screenshots of my notes and email them to you as well as it might depict more of my intial thoughts about the problem. 
+ Therefore, to give a better look at my progression, I decided to type in some thoughts I was thinking in certain classes to show you some insight. If you want, I can also take some screenshots of my notes and email them to you as well as it might depict more of my intial thoughts about the problem. Also, I like to build skeletons of my classes then go back into them and fill them out from the bottom up. 
   
-  However, I find that through spending extra time mapping out the problem, I run into less bugs later. 
-  
-  Also, I like to build skeletons of my classes then go back into them and fill them out from the bottom up. 
-  
-  Lastly, I am switching between Github and Eclipse so when I am completely finished, if you review my most recent commits and it looks like I copied and pasted the entire code into my classes. I just am making sure my code has absolutely no errors in it due to faulty copy and paste that I could've mistakenly done when switching code to and from Github and Eclipse and you should be able to see some sort of my thought process in earlier commits.
+  Lastly, I am switching between Github and Eclipse so when I am completely finished, if you review my most recent commits and it looks like I copied and pasted the entire code into my classes. I just am making sure my code works incase of faulty copy and paste that I could've mistakenly done when switching code to and from Github and Eclipse so you should be able to see some sort of my thought process in earlier commits.
  
  ASSUMPTIONS:
  1. I am assuming that(P-12345.A2 as an example) P-12345 is the plate and A2 is the well, so when it is time to transfer content from well to another well (P-3.A4 as an example) P-3 is another plate and A4 is a well. However, P-3 is a plate, but it isn't the "main plate" and is more of a sub plate. 
