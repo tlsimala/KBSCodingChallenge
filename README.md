@@ -16,6 +16,14 @@ Instructions:
  I hope that you enjoy my solution! (: 
  
  
+  Additionally, to give some insight into my progression through this problem, when I approach a problem I always start out on   some notebook paper or a white board (if there is one around). Normally, I like to go pretty in-depth and it can be time       consuming for me because not only do I take notes and summarize the problem, but I do draw skeletons of my code and even 
+  will write code as well to give me an even clearer idea of where I am going before I start typing. 
+  
+  Therefore, to give some better progression, I decided to type in some thoughts I was thinking in certain classes to show you 
+  some insight. If you want, I can also take some screenshots of my notes and email them to you as well as it might depict
+  more of my intial thoughts about the problem. 
+ 
+ 
  ASSUMPTIONS:
  1. I am assuming that(P-12345.A2 as an example) P-12345 is the plate and A2 is the well, so when it is time to transfer           content from well to another well (P-3.A4 as an example) P-3 is another plate and A4 is a well. However, P-3 is a plate,       it isn't the "main plate" and is more of a sub plate. 
  
